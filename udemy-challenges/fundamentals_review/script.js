@@ -209,7 +209,7 @@ console.log(drink2);
 
 console.log(`I like to drink ${age >= 18 ? "wine" : "water"}`);
 
-// CODING CHALLENGE
+// CHALLENGE
 
 const bill = 275;
 
@@ -225,24 +225,6 @@ const tip2 =
         ? `The total tip is ${bill * 0.15}`
         : `The total tip is ${bill * 0.2}`;
 console.log(tip2);
-
-
-Back to the two gymnastics teams, the Dolphins and the Koalas! There is a new gymnastics discipline, which works differently.
-
-Each team competes 3 times, and then the average of the 3 scores is calculated (so one average score per team). A team only wins if it has at least double the average score of the other team. Otherwise, no team wins!
-
-Your tasks:
-
-1, Create an arrow function calcAverage to calculate the average of 3 scores. This function should have three parameters and return a single number (the average score).
-
-Create two new variables — scoreDolphins and scoreKoalas, and assign the value returned from the calcAverage function to them (you will need to call this function, and pass scores as arguments).
-
-Create a function checkWinner that takes the average score of each team as parameters (avgDolphins and avgKoalas), and then logs the winner to the console, together with the victory points, according to the rule above. Example: Koalas win (30 vs. 13) (use avgDolphins and avgKoalas instead of hard-coded values).
-
-Use the checkWinner function to determine the winner for both DATA 1 and DATA 2.
-
-Ignore draws this time. Instead, log No team wins... to the console if there is no winner.
-
 
 const calcAverage = (a, b, c) => (a + b + c) / 3
 
@@ -262,19 +244,6 @@ function checkWinner(scoreDolphins, scoreKoalas){
 
 checkWinner(scoreDolphins, scoreKoalas)
 
-
-Steven wants you to improve his tip calculator, using the same rules as before — tip 15% of the bill if the bill value is between 50 and 300, and if the value is different, the tip is 20%.
-
-Your tasks:
-
-Write a function calcTip that takes any bill value as an input and returns the corresponding tip, calculated based on the rules above (you can check out the code from the first tip calculator challenge if you need to). Use the function type you like the most. Test the function using a bill value of 100.
-
-And now let's use arrays! So, create an array called bills containing the test data below.
-
-Create an array called tips containing the tip value for each bill, calculated from the function you created before.
-
-BONUS: Create an array totals containing the total values, so the bill + tip.
-
 TEST DATA: 125, 555, and 44.
 
 // const tip = (bill >= 50 && bill <= 300) ? bill * 0.15 : bill * 0.20
@@ -291,8 +260,6 @@ let tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
 console.log(tips);
 const totals = [(bills[0]+tips[0]), (bills[1]+tips[1]), (bills[2]+tips[2])]
 console.log(totals);
-
-
 
 const person = {
   name: "Mariam",
@@ -312,32 +279,89 @@ console.log(`${person.name} has ${person.friends.length} friends, and his best f
 ---
 OBJECTS CHALLENGE
 ---
-
-Let's go back to Mark and John comparing their BMIs!
-
-Remember: BMI = mass / (height * height) (mass in kg and height in meters).
-
-Your tasks:
-
-For each of them, create an object with properties for their full name, mass, and height (Mark Miller and John Smith). Name these objects as mark and john, and their properties exactly as fullName, mass and height.
-
-Create a calcBMI method on each object to calculate the BMI (the same method on both objects). Assign the BMI value to a property called bmi (lowercase), and also return it from the method.
-
-Log to the console who has the higher BMI, together with the full name and the respective BMI. Example: "John Smith's BMI (28.3) is higher than Mark Miller's (23.9)!".
-
-TEST DATA: Marks weighs 78 kg and is 1.69 m tall. John weighs 92 kg and is 1.95 m tall.
-
-*/
-
 const mark = {
-  fullName: 'Mark Miller';
-  mass: ;
-  height:;
-  calcBMI: function
+  fullName: 'Mark Miller',
+  mass: 78,
+  height: 1.69,
+  calcBMI: function(){
+    return this.bmi = this.mass / (this.height * this. height);
+  }
 }
+
 const john = {
-  fullName:;
-  mass: ;
-  height:;
-  calcBMI: function
+  fullName: 'John Smith',
+  mass: 92,
+  height: 1.95,
+  calcBMI: function(){
+    return this.bmi = this.mass / (this.height * this.height);
+  }
 }
+
+john.calcBMI()
+mark.calcBMI()
+
+if (mark.bmi > john.bmi) {
+  console.log(`${mark.fullName}'s BMI(${mark.bmi.toFixed(2)}) is higher than ${john.fullName}'s ${john.bmi.toFixed(2)}`);
+} else if (john.bmi > mark.bmi){
+  console.log(`${john.fullName}'s BMI(${john.bmi.toFixed(2)}) is higher than ${mark.fullName}'s ${mark.bmi.toFixed(2)}`);
+}
+
+const person = [
+  "Mariam",
+  1993,
+  false,
+  ['Richenda', 'Alainah', 'Kanita', 'Hassan', 'Shavonne']
+];
+
+const types = [];
+
+for(let i = 0; i < person.length; i++){
+  console.log(person[i]);
+  // create a new array to capture the type of the variables above.
+  types[i] = typeof person[i];
+  // or use the push method
+  // types.push(typeof person[i]);
+}
+
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for(let i=0; i < years.length; i++){
+  ages.push(2025 - (years[i]));
+}
+
+console.log(ages);
+
+const temps = [3, -1, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
+
+const calcAmp = function(temps){
+  let max = temps[0];
+  let min = temps[0];
+
+  for (let i= 0; i < temps.length ; i++){
+    const curTemp = temps[i];
+
+    // if (typeof curTemp !== 'number') continue;
+    if (curTemp > max) max = curTemp;
+    if (curTemp < min) min = curTemp;
+  }
+
+  console.log(max, min);
+  return max - min
+}
+
+const amplitude = calcAmp(temps);
+console.log(amplitude);
+
+// FOCUS TIMER REPLICA
+// converting minutes worked to hours in string format
+
+const time = [125, 55, 50, 90];
+
+for (let i = 0; i < time.length; i++){
+  let hours = Math.floor(time[i] / 60);
+  let mints = time[i] % 60;
+  console.log(hours, mints);
+  console.log(`It's been ${hours} hours and ${mints} minutes.`);
+}
+*/
