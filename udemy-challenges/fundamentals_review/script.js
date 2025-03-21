@@ -365,8 +365,6 @@ for (let i = 0; i < time.length; i++){
   console.log(`It's been ${hours} hours and ${mints} minutes.`);
 }
 
-*/
-
 // WHILE LOOPS
 
 const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
@@ -383,13 +381,17 @@ for (let i=0; i <bills.length; i++){
 }
 console.log(tips, totals);
 
-let sum = 0;
+// Write a function calcAverage which takes an array called arr as an argument. This function calculates the average of all numbers in the given array.
 
-const calcAverage = function(arr){
-  for (let i=0; i < arr.length; i++){
-    sum += arr[i]
-  }
-}
 
-calcAverage([1, 2, 3])
-console.log(sum);
+// const calcAverage = function(arr){
+//   let sum = 0;
+//   for (let i=0; i < arr.length; i++){
+//     sum += arr[i]
+//   }
+// }
+
+// calcAverage([1, 2, 3])
+// console.log(sum);
+
+*/
